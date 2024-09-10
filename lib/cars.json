@@ -1,0 +1,542 @@
+[
+  {
+    "id": "a8sj3ksd",
+    "name": "Koenigsegg",
+    "description": "Koenigsegg hypercars are world-renowned for their unparalleled performance, cutting-edge technology, and extreme speed. These Swedish-manufactured luxury cars, including models like the Jesko and Gemera, are engineered with revolutionary features such as FreeValve engines and lightweight carbon fiber construction.",
+    "car-type": "Hypercar",
+    "tank-capacity": "72",
+    "power": "1600 HP",
+    "seating-capacity": 2,
+    "rent-price-per-day": 1200,
+    "discount": 5,
+    "vendor": "Koenigsegg Automotive AB",
+    "images": [
+      {
+        "id": "z9x8f7ew",
+        "url": "https://utfs.io/f/07fdcf3a-bf35-41d3-aeda-962a97d2d55a-vmbbua.png"
+      }
+    ],
+    "reviews": [
+      {
+        "id": "1ab2c3d4",
+        "reviewer-name": "John Doe",
+        "reviewer-image": "https://example.com/images/reviewer1.jpg",
+        "review": "The Koenigsegg is an absolute beast! Fastest car I've ever driven.",
+        "stars": 5,
+        "date": "2024-01-12"
+      },
+      {
+        "id": "2bc3d4ef",
+        "reviewer-name": "Alex Johnson",
+        "reviewer-image": "https://example.com/images/reviewer2.jpg",
+        "review": "An incredible car, but you really need an open track to enjoy its full potential.",
+        "stars": 4,
+        "date": "2024-01-15"
+      },
+      {
+        "id": "4ed6f7gh",
+        "reviewer-name": "Samantha Green",
+        "reviewer-image": "https://example.com/images/reviewer3.jpg",
+        "review": "Absolutely mind-blowing performance, but the rent price is too high.",
+        "stars": 4,
+        "date": "2024-01-25"
+      },
+      {
+        "id": "5fj3lk8s",
+        "reviewer-name": "Chris Paul",
+        "reviewer-image": "https://example.com/images/reviewer4.jpg",
+        "review": "Great handling, and the engine sounds fantastic. A dream come true for speed lovers.",
+        "stars": 5,
+        "date": "2024-02-01"
+      },
+      {
+        "id": "6kf7k9sa",
+        "reviewer-name": "Peter Matthews",
+        "reviewer-image": "https://example.com/images/reviewer5.jpg",
+        "review": "Too much power for daily roads, but what a fantastic machine!",
+        "stars": 4,
+        "date": "2024-02-07"
+      }
+    ]
+  },
+  {
+    "id": "b9x3g2hf",
+    "name": "Nissan GT-R",
+    "description": "The Nissan GT-R, famously known as 'Godzilla,' is a high-performance sports car that blends power, precision, and advanced technology. Featuring a twin-turbo V6 engine and all-wheel drive, the GT-R offers superior handling and impressive acceleration.",
+    "car-type": "Sports Car",
+    "tank-capacity": "74",
+    "power": "565 HP",
+    "seating-capacity": 4,
+    "rent-price-per-day": 350,
+    "discount": 10,
+    "vendor": "Nissan Motor Corporation",
+    "images": [
+      {
+        "id": "g1x5h9kl",
+        "url": "https://utfs.io/f/f9c4a2b9-b507-480f-9c71-97a662e0d6d5-vmbbub.png"
+      }
+    ],
+    "reviews": [
+      {
+        "id": "7fj4l8an",
+        "reviewer-name": "Alice Smith",
+        "reviewer-image": "https://example.com/images/reviewer6.jpg",
+        "review": "An exhilarating ride! The GT-R handles beautifully on both track and street.",
+        "stars": 5,
+        "date": "2024-02-20"
+      },
+      {
+        "id": "g3i6n4lo",
+        "reviewer-name": "David Lee",
+        "reviewer-image": "https://example.com/images/reviewer7.jpg",
+        "review": "Great performance, but it's heavy and not as nimble as I expected.",
+        "stars": 4,
+        "date": "2024-02-25"
+      },
+      {
+        "id": "l3j7o2nc",
+        "reviewer-name": "Laura Simmons",
+        "reviewer-image": "https://example.com/images/reviewer8.jpg",
+        "review": "The GT-R is a perfect balance between power and comfort. Loved it!",
+        "stars": 5,
+        "date": "2024-03-01"
+      },
+      {
+        "id": "h2m7q4bp",
+        "reviewer-name": "Michael Collins",
+        "reviewer-image": "https://example.com/images/reviewer9.jpg",
+        "review": "It's a great car, but a bit overpriced compared to other supercars.",
+        "stars": 4,
+        "date": "2024-03-10"
+      },
+      {
+        "id": "9fl3m7qt",
+        "reviewer-name": "Sarah Brown",
+        "reviewer-image": "https://example.com/images/reviewer10.jpg",
+        "review": "A thrilling car! Perfect for a weekend getaway or a fun track day.",
+        "stars": 5,
+        "date": "2024-03-15"
+      }
+    ]
+  },
+  {
+    "id": "c8x7y3nt",
+    "name": "Rolls-Royce",
+    "description": "Rolls-Royce represents the pinnacle of automotive luxury, craftsmanship, and sophistication. With models like the Phantom, Ghost, and Cullinan, Rolls-Royce vehicles offer a unique blend of timeless design, ultra-luxurious interiors, and cutting-edge technology.",
+    "car-type": "Convertible",
+    "tank-capacity": "100",
+    "power": "563 HP",
+    "seating-capacity": 4,
+    "rent-price-per-day": 800,
+    "discount": 7,
+    "vendor": "Rolls-Royce Motor Cars Limited",
+    "images": [
+      {
+        "id": "d3s9f1aj",
+        "url": "https://utfs.io/f/4beb4eed-0626-4bea-a7f9-aa745fa9d2c6-12mj4t.png"
+      }
+    ],
+    "reviews": [
+      {
+        "id": "6r7u9p2m",
+        "reviewer-name": "James Brown",
+        "reviewer-image": "https://example.com/images/reviewer11.jpg",
+        "review": "The most luxurious car I've ever experienced. Truly a ride fit for royalty.",
+        "stars": 5,
+        "date": "2024-03-10"
+      },
+      {
+        "id": "m8k5o1qp",
+        "reviewer-name": "George Clark",
+        "reviewer-image": "https://example.com/images/reviewer12.jpg",
+        "review": "Impeccable comfort and performance. Worth every penny!",
+        "stars": 5,
+        "date": "2024-03-20"
+      },
+      {
+        "id": "i2k3l9fg",
+        "reviewer-name": "Sophia Carter",
+        "reviewer-image": "https://example.com/images/reviewer13.jpg",
+        "review": "Rolls-Royce truly defines luxury. The best car for special occasions.",
+        "stars": 5,
+        "date": "2024-04-02"
+      },
+      {
+        "id": "v1b6z5ew",
+        "reviewer-name": "Charlotte Evans",
+        "reviewer-image": "https://example.com/images/reviewer14.jpg",
+        "review": "A timeless car with elegance and performance combined.",
+        "stars": 5,
+        "date": "2024-04-10"
+      },
+      {
+        "id": "q4m6n8vo",
+        "reviewer-name": "Oliver Thompson",
+        "reviewer-image": "https://example.com/images/reviewer15.jpg",
+        "review": "The epitome of luxury, but very costly for regular use.",
+        "stars": 4,
+        "date": "2024-04-15"
+      }
+    ]
+  },
+  {
+    "id": "d9x5g7rt",
+    "name": "All-New Toyota Rush",
+    "description": "The all-new Toyota Rush is a compact SUV designed for families seeking versatility, space, and reliability. Featuring a sleek design, spacious interiors, and modern safety features, the Rush is perfect for both urban and off-road adventures.",
+    "car-type": "SUV",
+    "tank-capacity": "50",
+    "power": "103 HP",
+    "seating-capacity": 7,
+    "rent-price-per-day": 40,
+    "discount": 10,
+    "vendor": "Toyota Motor Corporation",
+    "images": [
+      {
+        "id": "k8f9n1tx",
+        "url": "https://utfs.io/f/6536d37d-8b45-478d-95d5-369dcef39c73-12mj4o.png"
+      }
+    ],
+    "reviews": [
+      {
+        "id": "1r8n4l2j",
+        "reviewer-name": "Kevin White",
+        "reviewer-image": "https://example.com/images/reviewer16.jpg",
+        "review": "A reliable and spacious family car. Perfect for weekend getaways.",
+        "stars": 4,
+        "date": "2024-05-12"
+      },
+      {
+        "id": "u2c3l7nm",
+        "reviewer-name": "Jessica Williams",
+        "reviewer-image": "https://example.com/images/reviewer17.jpg",
+        "review": "Good value for money, but lacks the power for serious off-roading.",
+        "stars": 4,
+        "date": "2024-05-17"
+      },
+      {
+        "id": "q9r4m8yt",
+        "reviewer-name": "Daniel Scott",
+        "reviewer-image": "https://example.com/images/reviewer18.jpg",
+        "review": "A well-rounded SUV for families, but could use more premium features.",
+        "stars": 4,
+        "date": "2024-05-25"
+      },
+      {
+        "id": "l7m5o2az",
+        "reviewer-name": "Lily James",
+        "reviewer-image": "https://example.com/images/reviewer19.jpg",
+        "review": "Great SUV for the price, but it's not as luxurious as competitors.",
+        "stars": 4,
+        "date": "2024-06-01"
+      },
+      {
+        "id": "m2t9f7ek",
+        "reviewer-name": "Anthony Thomas",
+        "reviewer-image": "https://example.com/images/reviewer20.jpg",
+        "review": "A decent car, but could use better interior quality.",
+        "stars": 3,
+        "date": "2024-06-10"
+      }
+    ]
+  },
+  {
+    "id": "e9c7g4mt",
+    "name": "Honda CR-V",
+    "description": "The Honda CR-V is a popular compact SUV known for its fuel efficiency, spacious interior, and advanced safety features. It is a versatile choice for both daily commutes and family road trips, offering a smooth ride and modern technology.",
+    "car-type": "SUV",
+    "tank-capacity": "57",
+    "power": "190 HP",
+    "seating-capacity": 5,
+    "rent-price-per-day": 45,
+    "discount": 8,
+    "vendor": "Honda Motor Co., Ltd.",
+    "images": [
+      {
+        "id": "f7j3l2kq",
+        "url": "https://utfs.io/f/95e3d5e5-51b9-40bb-a311-35230377f390-12mj4p.png"
+      }
+    ],
+    "reviews": [
+      {
+        "id": "3k9f2l8a",
+        "reviewer-name": "Jack Wilson",
+        "reviewer-image": "https://example.com/images/reviewer21.jpg",
+        "review": "The CR-V is reliable and spacious, but lacks the power of competitors.",
+        "stars": 4,
+        "date": "2024-06-15"
+      },
+      {
+        "id": "l7i4o2pn",
+        "reviewer-name": "Megan Green",
+        "reviewer-image": "https://example.com/images/reviewer22.jpg",
+        "review": "Great for everyday driving. Smooth ride and excellent fuel efficiency.",
+        "stars": 5,
+        "date": "2024-06-18"
+      },
+      {
+        "id": "h3j9f7an",
+        "reviewer-name": "Tyler Hill",
+        "reviewer-image": "https://example.com/images/reviewer23.jpg",
+        "review": "A solid family SUV, but I wish it had more off-road capability.",
+        "stars": 4,
+        "date": "2024-06-22"
+      },
+      {
+        "id": "m2k8j4lp",
+        "reviewer-name": "Emma Davis",
+        "reviewer-image": "https://example.com/images/reviewer24.jpg",
+        "review": "Very comfortable and practical for long drives. Highly recommend!",
+        "stars": 5,
+        "date": "2024-07-01"
+      },
+      {
+        "id": "o3k7n1fj",
+        "reviewer-name": "Oliver Brown",
+        "reviewer-image": "https://example.com/images/reviewer25.jpg",
+        "review": "Solid SUV for the price. Great for family trips but could use more power.",
+        "stars": 4,
+        "date": "2024-07-10"
+      }
+    ]
+  },
+  {
+    "id": "f7x9c1tm",
+    "name": "All-New Daihatsu Terios",
+    "description": "The all-new Daihatsu Terios is a compact SUV that blends practicality and affordability with modern styling and functionality. Its small footprint makes it easy to navigate city streets while offering a spacious cabin for passengers and cargo.",
+    "car-type": "SUV",
+    "tank-capacity": "45",
+    "power": "105 HP",
+    "seating-capacity": 7,
+    "rent-price-per-day": 35,
+    "discount": 12,
+    "vendor": "Daihatsu Motor Co., Ltd.",
+    "images": [
+      {
+        "id": "m7i3f5wo",
+        "url": "https://utfs.io/f/f48f64dd-d6f3-4206-98a0-4d3113f84f98-12mj4q.png"
+      }
+    ],
+    "reviews": [
+      {
+        "id": "3j5l9f7p",
+        "reviewer-name": "Emily White",
+        "reviewer-image": "https://example.com/images/reviewer26.jpg",
+        "review": "Great little SUV for the price. Perfect for city driving.",
+        "stars": 4,
+        "date": "2024-07-15"
+      },
+      {
+        "id": "k8l4n6ij",
+        "reviewer-name": "Mason Clark",
+        "reviewer-image": "https://example.com/images/reviewer27.jpg",
+        "review": "Good handling, but it struggles a bit with more powerful SUVs.",
+        "stars": 3,
+        "date": "2024-07-20"
+      },
+      {
+        "id": "m7i3j2lm",
+        "reviewer-name": "Olivia King",
+        "reviewer-image": "https://example.com/images/reviewer28.jpg",
+        "review": "Practical and affordable. Does what it needs to but nothing too fancy.",
+        "stars": 4,
+        "date": "2024-07-25"
+      },
+      {
+        "id": "g6l4j7po",
+        "reviewer-name": "Liam Harris",
+        "reviewer-image": "https://example.com/images/reviewer29.jpg",
+        "review": "A great budget SUV, but lacking in premium features.",
+        "stars": 3,
+        "date": "2024-08-01"
+      },
+      {
+        "id": "2h9l5j7w",
+        "reviewer-name": "Ava Walker",
+        "reviewer-image": "https://example.com/images/reviewer30.jpg",
+        "review": "Perfect for daily commutes. Fuel-efficient and reliable.",
+        "stars": 4,
+        "date": "2024-08-05"
+      }
+    ]
+  },
+  {
+    "id": "g7l3c8no",
+    "name": "MG ZS Exclusive",
+    "description": "The MG ZS Exclusive is a stylish compact SUV that offers a balance of technology, comfort, and performance at an affordable price. With its sleek design, advanced safety features, and spacious interior, the ZS Exclusive is ideal for both city and highway driving.",
+    "car-type": "Hatchback",
+    "tank-capacity": "55",
+    "power": "140 HP",
+    "seating-capacity": 5,
+    "rent-price-per-day": 30,
+    "discount": 15,
+    "vendor": "MG Motor UK Limited",
+    "images": [
+      {
+        "id": "m8j5l3ko",
+        "url": "https://utfs.io/f/aca3f818-df39-45ba-8169-1b16d113bf34-1g38.png"
+      }
+    ],
+    "reviews": [
+      {
+        "id": "8l4n6i7j",
+        "reviewer-name": "Lily Roberts",
+        "reviewer-image": "https://example.com/images/reviewer31.jpg",
+        "review": "A very stylish SUV for its price range. Love the modern tech features.",
+        "stars": 5,
+        "date": "2024-08-12"
+      },
+      {
+        "id": "k9l4m7pf",
+        "reviewer-name": "Noah Miller",
+        "reviewer-image": "https://example.com/images/reviewer32.jpg",
+        "review": "Great value for money. Spacious and comfortable for long drives.",
+        "stars": 4,
+        "date": "2024-08-15"
+      },
+      {
+        "id": "2f7l5m9w",
+        "reviewer-name": "Chloe Adams",
+        "reviewer-image": "https://example.com/images/reviewer33.jpg",
+        "review": "A stylish SUV with a smooth ride. Perfect for city driving.",
+        "stars": 5,
+        "date": "2024-08-20"
+      },
+      {
+        "id": "j8l4f9jo",
+        "reviewer-name": "Liam Turner",
+        "reviewer-image": "https://example.com/images/reviewer34.jpg",
+        "review": "Affordable SUV with great features. Just wish it had more power.",
+        "stars": 4,
+        "date": "2024-08-25"
+      },
+      {
+        "id": "4m9l5nwo",
+        "reviewer-name": "Sophia Lewis",
+        "reviewer-image": "https://example.com/images/reviewer35.jpg",
+        "review": "Great for the price, but the interior could be a bit more premium.",
+        "stars": 4,
+        "date": "2024-08-30"
+      }
+    ]
+  },
+  {
+    "id": "h3x9c5tm",
+    "name": "New MG ZS",
+    "description": "The New MG ZS is a refreshed compact SUV with enhanced technology, improved design, and better performance. It remains an affordable option for those seeking a versatile vehicle for both city and off-road driving, packed with modern features.",
+    "car-type": "SUV",
+    "tank-capacity": "48",
+    "power": "120 HP",
+    "seating-capacity": 5,
+    "rent-price-per-day": 32,
+    "discount": 12,
+    "vendor": "MG Motor UK Limited",
+    "images": [
+      {
+        "id": "p7f3l5ko",
+        "url": "https://utfs.io/f/902daed3-5465-41f9-8f02-8a714abd3f5a-12mj4s.png"
+      }
+    ],
+    "reviews": [
+      {
+        "id": "5k4n6j7i",
+        "reviewer-name": "Aiden Mitchell",
+        "reviewer-image": "https://example.com/images/reviewer36.jpg",
+        "review": "Very modern design and packed with features. Best SUV for the price.",
+        "stars": 5,
+        "date": "2024-09-01"
+      },
+      {
+        "id": "i4l3m7pt",
+        "reviewer-name": "Amelia Evans",
+        "reviewer-image": "https://example.com/images/reviewer37.jpg",
+        "review": "Stylish SUV with great tech, but the engine could be more powerful.",
+        "stars": 4,
+        "date": "2024-09-05"
+      },
+      {
+        "id": "l5j7f3mo",
+        "reviewer-name": "Isabella Foster",
+        "reviewer-image": "https://example.com/images/reviewer38.jpg",
+        "review": "A great SUV for city driving, but not built for tough off-road terrain.",
+        "stars": 4,
+        "date": "2024-09-10"
+      },
+      {
+        "id": "p4k9l3jo",
+        "reviewer-name": "Lucas Gray",
+        "reviewer-image": "https://example.com/images/reviewer39.jpg",
+        "review": "Affordable SUV with decent performance. Perfect for my daily commute.",
+        "stars": 4,
+        "date": "2024-09-15"
+      },
+      {
+        "id": "m7i4l5jz",
+        "reviewer-name": "Ella Wright",
+        "reviewer-image": "https://example.com/images/reviewer40.jpg",
+        "review": "A well-rounded SUV for its price, but the interior quality could improve.",
+        "stars": 4,
+        "date": "2024-09-20"
+      }
+    ]
+  },
+  {
+    "id": "i9l5x3bt",
+    "name": "MG ZX Excite",
+    "description": "The MG ZX Excite is a sporty and tech-packed SUV that offers a fun driving experience at an affordable price. With its bold design, advanced infotainment system, and reliable performance, it is perfect for those seeking excitement in their daily commutes.",
+    "car-type": "Hatchback",
+    "tank-capacity": "50",
+    "power": "130 HP",
+    "seating-capacity": 5,
+    "rent-price-per-day": 28,
+    "discount": 10,
+    "vendor": "MG Motor UK Limited",
+    "images": [
+      {
+        "id": "g8l5j3wo",
+        "url": "https://utfs.io/f/aca3f818-df39-45ba-8169-1b16d113bf34-1g38.png"
+      }
+    ],
+    "reviews": [
+      {
+        "id": "l9j7f2mp",
+        "reviewer-name": "Harper Anderson",
+        "reviewer-image": "https://example.com/images/reviewer41.jpg",
+        "review": "A fun and exciting SUV to drive. Perfect for city commutes and road trips.",
+        "stars": 5,
+        "date": "2024-09-22"
+      },
+      {
+        "id": "k8j4l6tm",
+        "reviewer-name": "Mason Lee",
+        "reviewer-image": "https://example.com/images/reviewer42.jpg",
+        "review": "Good balance of features and performance for the price. Could use more power.",
+        "stars": 4,
+        "date": "2024-09-25"
+      },
+      {
+        "id": "m4l6j3fo",
+        "reviewer-name": "Charlotte Martin",
+        "reviewer-image": "https://example.com/images/reviewer43.jpg",
+        "review": "Stylish SUV with plenty of tech, but a bit lacking in overall power.",
+        "stars": 4,
+        "date": "2024-09-30"
+      },
+      {
+        "id": "g6l5m7fp",
+        "reviewer-name": "Liam Robinson",
+        "reviewer-image": "https://example.com/images/reviewer44.jpg",
+        "review": "An affordable and tech-savvy SUV, perfect for a tech enthusiast.",
+        "stars": 5,
+        "date": "2024-10-01"
+      },
+      {
+        "id": "p5k9m4zo",
+        "reviewer-name": "Sophie Hall",
+        "reviewer-image": "https://example.com/images/reviewer45.jpg",
+        "review": "Great design and features, but it could use a bit more interior luxury.",
+        "stars": 4,
+        "date": "2024-10-05"
+      }
+    ]
+  }
+]
