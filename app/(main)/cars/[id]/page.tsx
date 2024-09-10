@@ -2,7 +2,7 @@ import React from "react";
 
 const Page = ({ params: { id } }: { params: { id: string } }) => {
   return (
-    <main className="">
+    <main>
       <span>{id}</span>
     </main>
   );
