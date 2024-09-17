@@ -90,9 +90,8 @@ const Select = ({
       scrollIntoView(getFocusedOption());
     };
 
-    if (open) {
-      scrollToSelectedItem();
-      scrollToFocusedItem();
+    const fixPopupPosition = () => {
+      const listBox = popupRef?.current;
       if (listBox) {
         if (isBottomHidden(listBox)) {
           alignToTop();
@@ -102,6 +101,12 @@ const Select = ({
           alignToBottom();
         }
       }
+    };
+
+    if (open) {
+      scrollToSelectedItem();
+      scrollToFocusedItem();
+      fixPopupPosition();
     } else {
       if (selectedOption !== -1) {
         removeFocused(getFocusedOption());
@@ -180,6 +185,7 @@ const Select = ({
     const addEventListeners = () => {
       document.addEventListener("click", handleOutsideClick);
       document.addEventListener("keydown", handleKey);
+      document.addEventListener("scroll", fixPopupPosition);
     };
 
     addEventListeners();
@@ -187,6 +193,7 @@ const Select = ({
     return () => {
       document.removeEventListener("click", handleOutsideClick);
       document.removeEventListener("keydown", handleKey);
+      document.removeEventListener("scroll", fixPopupPosition);
     };
   }, [handleSelection, open, selectedOption]);
 

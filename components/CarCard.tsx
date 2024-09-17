@@ -25,17 +25,17 @@ const CarCard = (props: CarType) => {
           <Heart size={20} />
         </Button>
       </div>
-      <div className="flex h-[150px] w-full items-end">
+      <div className="mt-auto flex h-[150px] w-full items-end justify-center">
         <Image
           src={props.images[0].url}
           width={300}
           height={150}
           alt={props.name}
-          className="h-auto w-full select-none"
+          className="h-full w-auto select-none object-contain"
         />
       </div>
 
-      <div className="flex flex-row gap-4">
+      <div className="mt-auto flex flex-row gap-4">
         <Tooltip tooltipContent={`${props["tank-capacity"]}L fuel capacity`}>
           <div className="flex flex-row gap-1.5">
             <Fuel size={16} className="text-slate-500" />

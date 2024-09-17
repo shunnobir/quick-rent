@@ -22,3 +22,17 @@ export interface CarType {
     date: string;
   }[];
 }
+
+export type CategoryType =
+  | {
+      id: string;
+      name: string;
+      type: "options" | "slider";
+      categories: string[];
+    }
+  | {
+      id: string;
+      name: string;
+      type: "options" | "slider";
+      categories: number[];
+    };
