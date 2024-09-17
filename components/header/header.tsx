@@ -7,7 +7,7 @@ import Input from "@/components/input";
 
 const Header = () => {
   return (
-    <header className="border-b border-solid border-slate-200 bg-background px-6 py-4 shadow-sm sm:px-10">
+    <header className="border-b border-solid border-slate-200 bg-background px-5 py-4 shadow-sm sm:px-10">
       <div className="mx-auto grid max-w-[1220px] grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-4">
         <div className="flex flex-row gap-8 sm:col-span-2">
           <Link href="/" className="inline-flex items-center">

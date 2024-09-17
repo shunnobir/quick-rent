@@ -6,6 +6,7 @@ import Button from "@/components/button";
 import { Fuel, Heart, UsersRound, Zap } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import Tooltip from "@/components/tooltip";
 
 const CarCard = (props: CarType) => {
   const router = useRouter();
@@ -24,33 +25,41 @@ const CarCard = (props: CarType) => {
           <Heart size={20} />
         </Button>
       </div>
-      <div className="flex h-[150px] w-full items-end">
+      <div className="mt-auto flex h-[150px] w-full items-end justify-center">
         <Image
           src={props.images[0].url}
           width={300}
           height={150}
           alt={props.name}
-          className="h-auto w-full select-none"
+          className="h-full w-auto select-none object-contain"
         />
       </div>
 
-      <div className="flex flex-row gap-4">
-        <div className="flex flex-row gap-1.5">
-          <Fuel size={16} className="text-slate-500" />
-          <span className="text-sm text-slate-500">
-            {props["tank-capacity"]}L
-          </span>
-        </div>
-        <div className="flex flex-row gap-1.5">
-          <Zap size={16} className="text-slate-500" />
-          <span className="text-sm text-slate-500">{props["power"]}</span>
-        </div>
-        <div className="flex flex-row gap-1.5">
-          <UsersRound size={16} className="text-slate-500" />
-          <span className="text-sm text-slate-500">
-            {props["seating-capacity"]} People
-          </span>
-        </div>
+      <div className="mt-auto flex flex-row gap-4">
+        <Tooltip tooltipContent={`${props["tank-capacity"]}L fuel capacity`}>
+          <div className="flex flex-row gap-1.5">
+            <Fuel size={16} className="text-slate-500" />
+            <span className="text-sm text-slate-500">
+              {props["tank-capacity"]}L
+            </span>
+          </div>
+        </Tooltip>
+        <Tooltip tooltipContent={`${props["power"]} peak power`}>
+          <div className="flex flex-row gap-1.5">
+            <Zap size={16} className="text-slate-500" />
+            <span className="text-sm text-slate-500">{props["power"]}</span>
+          </div>
+        </Tooltip>
+        <Tooltip
+          tooltipContent={`${props["seating-capacity"]} adult passengers`}
+        >
+          <div className="flex flex-row gap-1.5">
+            <UsersRound size={16} className="text-slate-500" />
+            <span className="text-sm text-slate-500">
+              {props["seating-capacity"]} People
+            </span>
+          </div>
+        </Tooltip>
       </div>
 
       <div className="flex flex-row items-center justify-between gap-4">

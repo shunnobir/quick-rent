@@ -15,13 +15,13 @@ export async function GET(req: NextRequest) {
       Object.fromEntries(req.nextUrl.searchParams),
     );
 
-    setTimeout(2000); // simulate database query
+    await setTimeout(2500); /* simulate database query */
     const temp = shuffle([...cars]);
     const result =
       params.filter === "popular"
         ? temp.slice(0, 4)
         : params.filter === "recommended"
-          ? temp.slice(0, Math.ceil(Math.random() * Math.min(15, temp.length)))
+          ? temp.slice(0, 6)
           : temp;
     return NextResponse.json(
       params.limit !== undefined ? result.slice(0, params.limit) : result,

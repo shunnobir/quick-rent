@@ -5,7 +5,7 @@ const Layout = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  return <div className="flex flex-1 flex-col bg-slate-100">{children}</div>;
+  return <div className="flex-1">{children}</div>;
 };
 
 export default Layout;

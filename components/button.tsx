@@ -12,6 +12,8 @@ const button = cva(
           "bg-indigo-600 text-white hover:bg-indigo-600/90 active:bg-indigo-700",
         icon: "p-1 rounded-full text-slate-400 hover:text-indigo-600 active:text-indigo-700",
         link: "font-medium p-0 text-indigo-600 hover:text-indigo-600/900 active:text-indigo-700 ",
+        outline:
+          "border border-solid border-slate-300 hover:text-indigo-600 hover:border-indigo-600 active:text-indigo-700 active:border-indigo-700 text-slate-600",
       },
     },
     defaultVariants: {
@@ -26,22 +28,24 @@ interface ButtonProps
   href?: string;
 }
 
-const Button = ({
-  className,
-  variant,
-  children,
-  href,
-  ...props
-}: ButtonProps) => {
-  return href ? (
-    <Link href={href} className={cn(button({ variant, className }))}>
-      {children}
-    </Link>
-  ) : (
-    <button className={cn(button({ variant, className }))} {...props}>
-      {children}
-    </button>
-  );
-};
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, children, href, ...props }, ref) => {
+    return href ? (
+      <Link href={href} className={cn(button({ variant, className }))}>
+        {children}
+      </Link>
+    ) : (
+      <button
+        ref={ref}
+        className={cn(button({ variant, className }))}
+        {...props}
+      >
+        {children}
+      </button>
+    );
+  },
+);
+
+Button.displayName = "Button";
 
 export default Button;
