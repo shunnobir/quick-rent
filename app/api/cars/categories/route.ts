@@ -8,11 +8,14 @@ export async function GET(req: NextRequest) {
     req; /* unused parameter */
     await setTimeout(2500); /* simulate database query */
     const temp = shuffle([...cars]);
-    const prices: number[] = [];
-    const minPrice = Math.min(...temp.map((car) => car["rent-price-per-day"]));
-    const maxPrice = Math.max(...temp.map((car) => car["rent-price-per-day"]));
-    for (let i = minPrice - (minPrice % 10); i <= maxPrice; i += 100) {
+    const prices: number[] = [20];
+    let maxPrice = Math.max(...temp.map((car) => car["rent-price-per-day"]));
+    maxPrice = maxPrice + (maxPrice % 10);
+    for (let i = 50; ; i += 50) {
       prices.push(i);
+      if (i > maxPrice) {
+        break;
+      }
     }
 
     const result = [
@@ -28,7 +31,9 @@ export async function GET(req: NextRequest) {
         type: "options",
         categories: Array.from(
           new Set(temp.map((car) => car["seating-capacity"])),
-        ).map((elem) => `${elem} Person`),
+        )
+          .sort()
+          .map((elem) => `${elem} Person${elem > 1 ? "s" : ""}`),
       },
       {
         id: "3",

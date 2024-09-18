@@ -7,7 +7,7 @@
     "tank-capacity": "72",
     "power": "1600 HP",
     "seating-capacity": 2,
-    "rent-price-per-day": 1200,
+    "rent-price-per-day": 350,
     "discount": 5,
     "vendor": "Koenigsegg Automotive AB",
     "images": [
@@ -67,7 +67,7 @@
     "tank-capacity": "74",
     "power": "565 HP",
     "seating-capacity": 4,
-    "rent-price-per-day": 350,
+    "rent-price-per-day": 150,
     "discount": 10,
     "vendor": "Nissan Motor Corporation",
     "images": [
@@ -127,7 +127,7 @@
     "tank-capacity": "100",
     "power": "563 HP",
     "seating-capacity": 4,
-    "rent-price-per-day": 800,
+    "rent-price-per-day": 280,
     "discount": 7,
     "vendor": "Rolls-Royce Motor Cars Limited",
     "images": [
