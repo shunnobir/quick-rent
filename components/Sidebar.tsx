@@ -115,41 +115,7 @@ const Sidebar = () => {
           <X size={20} />
         </Button>
         {loading ? (
-          <>
-            <div className="flex flex-col gap-4 rounded-lg bg-background px-6 py-8">
-              <span className="text-xs uppercase text-slate-400">TYPE</span>
-              <div className="flex flex-col gap-2.5">
-                {[1, 2, 3, 4, 5].map((val) => (
-                  <div className="flex flex-row gap-2" key={val}>
-                    <Skeleton className="h-6 w-6 rounded-md" />
-                    <Skeleton className="h-6 w-60 rounded-md" />
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="flex flex-col gap-4 rounded-lg bg-background px-6 py-8">
-              <span className="text-xs uppercase text-slate-400">Capacity</span>
-              <div className="flex flex-col gap-2.5">
-                {[1, 2, 3, 4, 6].map((val) => (
-                  <div className="flex flex-row gap-2" key={val}>
-                    <Skeleton className="h-6 w-6 rounded-md" />
-                    <Skeleton className="h-6 w-60 rounded-md" />
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="flex flex-col gap-4 rounded-lg bg-background px-6 py-8">
-              <span className="text-xs uppercase text-slate-400">Price</span>
-              <div className="flex flex-col gap-2.5">
-                {[1, 2, 3, 4, 6].map((val) => (
-                  <div className="flex flex-row gap-2" key={val}>
-                    <Skeleton className="h-6 w-6 rounded-md" />
-                    <Skeleton className="h-6 w-60 rounded-md" />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </>
+          <SidebarFallback />
         ) : categories ? (
           categories.map((category) => (
             <div
@@ -215,6 +181,46 @@ const Sidebar = () => {
             </div>
           ))
         ) : null}
+      </div>
+    </>
+  );
+};
+
+export const SidebarFallback = () => {
+  return (
+    <>
+      <div className="flex flex-col gap-4 rounded-lg bg-background px-6 py-8">
+        <span className="text-xs uppercase text-slate-400">TYPE</span>
+        <div className="flex flex-col gap-2.5">
+          {[1, 2, 3, 4, 5].map((val) => (
+            <div className="flex flex-row gap-2" key={val}>
+              <Skeleton className="h-6 w-6 rounded-md" />
+              <Skeleton className="h-6 w-60 rounded-md" />
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="flex flex-col gap-4 rounded-lg bg-background px-6 py-8">
+        <span className="text-xs uppercase text-slate-400">Capacity</span>
+        <div className="flex flex-col gap-2.5">
+          {[1, 2, 3, 4, 6].map((val) => (
+            <div className="flex flex-row gap-2" key={val}>
+              <Skeleton className="h-6 w-6 rounded-md" />
+              <Skeleton className="h-6 w-60 rounded-md" />
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="flex flex-col gap-4 rounded-lg bg-background px-6 py-8">
+        <span className="text-xs uppercase text-slate-400">Price</span>
+        <div className="flex flex-col gap-2.5">
+          {[1, 2, 3, 4, 6].map((val) => (
+            <div className="flex flex-row gap-2" key={val}>
+              <Skeleton className="h-6 w-6 rounded-md" />
+              <Skeleton className="h-6 w-60 rounded-md" />
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
