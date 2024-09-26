@@ -22,14 +22,14 @@ const Recommended = () => {
         </Button>
       </div>
       {loading ? (
-        <div className="grid min-h-[350px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid auto-rows-max grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <Skeleton className="flex h-full min-h-[350px] w-full bg-slate-300" />
           <Skeleton className="flex h-full min-h-[350px] w-full bg-slate-300" />
           <Skeleton className="hidden h-full min-h-[350px] w-full bg-slate-300 lg:flex" />
           <Skeleton className="hidden h-full min-h-[350px] w-full bg-slate-300 xl:flex" />
         </div>
       ) : cars && cars.length > 0 ? (
-        <div className="grid min-h-[350px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid auto-rows-max grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {cars.map((car) => {
             return <CarCard {...car} key={car.id} />;
           })}

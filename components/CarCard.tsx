@@ -13,7 +13,7 @@ const CarCard = (props: CarType) => {
 
   return (
     <div
-      className="flex flex-col gap-4 rounded-lg border border-solid border-slate-200 bg-background p-5 shadow-sm hover:cursor-pointer hover:border-indigo-600"
+      className="flex max-h-[350px] flex-col gap-4 rounded-lg border border-solid border-slate-200 bg-background p-5 shadow-sm hover:cursor-pointer hover:border-indigo-600"
       onClick={() => router.push(`/cars/${props.id}`)}
     >
       <div className="flex flex-row items-start justify-between">
