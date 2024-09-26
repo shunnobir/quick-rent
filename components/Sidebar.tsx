@@ -8,6 +8,7 @@ import Checkbox from "./checkbox";
 import { Settings2, X } from "lucide-react";
 import Button from "./button";
 import { cn } from "@/lib/utils";
+import { useFilters } from "@/hooks/useFilters";
 
 const Sidebar = () => {
   const { data, fetching: loading } = useCategories();
@@ -17,6 +18,51 @@ const Sidebar = () => {
   );
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const [filters, setFilters] = useFilters();
+
+  const handleTypeFilter = (value: string) => {
+    setFilters((prev) => {
+      const n = [...prev.type, value].sort();
+      return { ...prev, type: n };
+    });
+  };
+
+  const handleRemoveTypeFilter = (value: string) => {
+    setFilters((prev) => {
+      const n = prev.type.filter((type) => type !== value);
+      return { ...prev, type: n };
+    });
+  };
+
+  const handleCapacityFilter = (value: string) => {
+    setFilters((prev) => {
+      const n = [...prev.capacity, value.split(" ")[0]].sort();
+      return { ...prev, capacity: n };
+    });
+  };
+
+  const handleRemoveCapacityFilter = (value: string) => {
+    setFilters((prev) => {
+      const n = prev.capacity.filter(
+        (capacity) => capacity !== value.split(" ")[0],
+      );
+      return { ...prev, capacity: n };
+    });
+  };
+
+  const handlePriceFilter = (lower: number, upper: number) => {
+    setFilters((prev) => {
+      const n = [...prev.price, `${lower}-${upper}`].sort();
+      return { ...prev, price: n };
+    });
+  };
+
+  const handleRemovePriceFilter = (lower: number, upper: number) => {
+    setFilters((prev) => {
+      const n = prev.price.filter((price) => price !== `${lower}-${upper}`);
+      return { ...prev, price: n };
+    });
+  };
 
   useEffect(() => {
     const handleOutsideClick = (e: MouseEvent) => {
@@ -116,13 +162,52 @@ const Sidebar = () => {
               <div className="flex flex-col gap-3">
                 {category.type === "options"
                   ? category.categories.map((categ, index) => (
-                      <Checkbox key={index} label={categ.toString()} />
+                      <Checkbox
+                        key={index}
+                        label={categ.toString()}
+                        value={
+                          category.name.toLowerCase() === "type"
+                            ? filters.type.includes(categ.toString())
+                            : filters.capacity.includes(
+                                categ.toString().split(" ")[0],
+                              )
+                        }
+                        onChangeValue={(checked) =>
+                          category.name.toLowerCase() === "type"
+                            ? checked
+                              ? handleTypeFilter(categ.toString())
+                              : handleRemoveTypeFilter(categ.toString())
+                            : checked
+                              ? handleCapacityFilter(categ.toString())
+                              : handleRemoveCapacityFilter(categ.toString())
+                        }
+                      />
                     ))
                   : category.categories.map((categ, index, array) =>
                       index + 2 <= category.categories.length ? (
                         <Checkbox
                           key={index}
                           label={`$${categ} - $${array[index + 1]}`}
+                          value={
+                            filters.price.find((price) => {
+                              const [lower, upper] = price.split("-");
+                              return (
+                                lower === categ.toString() &&
+                                upper === array[index + 1].toString()
+                              );
+                            }) !== undefined
+                          }
+                          onChangeValue={(checked) =>
+                            checked
+                              ? handlePriceFilter(
+                                  Number.parseInt(categ.toString()),
+                                  Number.parseInt(array[index + 1].toString()),
+                                )
+                              : handleRemovePriceFilter(
+                                  Number.parseInt(categ.toString()),
+                                  Number.parseInt(array[index + 1].toString()),
+                                )
+                          }
                         />
                       ) : null,
                     )}

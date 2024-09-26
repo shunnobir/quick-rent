@@ -47,7 +47,6 @@ export class QueryFetch {
     }
     this.state.fetchFn = async () => {
       try {
-        console.log("fetching...");
         this.setState((prev) => ({ ...prev, fetching: true }));
         const data = await this.userFetchFn(...this.userFetchFnDeps);
         this.setState((prev) => ({ ...prev, data }));

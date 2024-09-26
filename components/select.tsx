@@ -235,7 +235,6 @@ const Select = ({
             open && "flex animate-opacity",
           )}
           aria-expanded={open}
-          onFocus={() => console.log("focused")}
         >
           {options.map((option, index) => (
             <li
