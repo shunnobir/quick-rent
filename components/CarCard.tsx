@@ -1,7 +1,7 @@
 "use client";
 
 import { CarType } from "@/types";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Button from "@/components/button";
 import { Fuel, Heart, UsersRound, Zap } from "lucide-react";
 import Image from "next/image";

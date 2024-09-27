@@ -7,7 +7,9 @@ const ReviewCard = (props: { review: ReviewType }) => {
     <div className="flex flex-col gap-5 rounded-lg bg-background p-5">
       <Quote size={24} className="text-indigo-600" />
       <span className="italic leading-6 text-slate-700">
-        "{props.review.review}"
+        {'"'}
+        {props.review.review}
+        {'"'}
       </span>
       <div className="flex flex-row items-center justify-between">
         <div className="flex flex-row items-center gap-2.5">
