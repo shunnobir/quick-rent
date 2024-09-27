@@ -19,6 +19,7 @@ const Select = ({
   options,
   value,
   onChangeValue,
+  className,
   ...props
 }: SelectProps) => {
   const id = useId();
@@ -198,8 +199,8 @@ const Select = ({
   }, [handleSelection, open, selectedOption]);
 
   return (
-    <div className="5 flex flex-col gap-1">
-      <label>{label}</label>
+    <div className="flex flex-col gap-1">
+      {label ? <label>{label}</label> : null}
       <div
         ref={ref}
         className="relative"
@@ -210,7 +211,10 @@ const Select = ({
       >
         <Button
           id={id}
-          className="w-full justify-between gap-2 bg-slate-100 font-normal text-foreground hover:bg-slate-200 active:bg-slate-300"
+          className={cn(
+            "w-full justify-between gap-2 bg-slate-100 font-normal text-foreground hover:bg-slate-200 active:bg-slate-300",
+            className,
+          )}
           onClick={() => {
             setOpen((prev) => !prev);
           }}

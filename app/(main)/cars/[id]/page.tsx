@@ -3,7 +3,7 @@
 import { useCar } from "@/hooks/useCar";
 import { CarType } from "@/types";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
 import React, { useState } from "react";
 import Loading from "./loading";
 import Button from "@/components/button";
@@ -11,13 +11,15 @@ import { Fuel, Heart, UsersRound, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Tooltip from "@/components/tooltip";
 import ReviewCard from "@/components/ReviewCard";
-import PopularCars from "../../components/PopularCars";
+import PopularCars from "@/components/PopularCars";
 import useFavorite from "@/hooks/useFavorite";
 
 const Page = ({ params: { id } }: { params: { id: string } }) => {
+  const router = useRouter();
+
   const { data, fetching: loading } = useCar(id);
   const car: CarType | undefined = data ? (data as CarType[])[0] : undefined;
-  const [hour, setHour] = useState(1);
+  const [day, setDay] = useState(1);
   const { favorite, handleFavorite } = useFavorite(id);
 
   if (!car && !loading) {
@@ -29,7 +31,7 @@ const Page = ({ params: { id } }: { params: { id: string } }) => {
   }
 
   return (
-    <main className="mx-auto grid max-w-[1220px] grid-cols-1 gap-6 py-4 pb-[100px] sm:grid-cols-2">
+    <main className="mx-auto grid max-w-[1220px] grid-cols-1 gap-6 px-5 py-4 pb-[100px] sm:grid-cols-2 sm:px-10 xl:px-0">
       <div className="flex h-[350px] flex-col gap-2 lg:h-[500px]">
         <Image
           src={car!.images[0].url}
@@ -96,15 +98,15 @@ const Page = ({ params: { id } }: { params: { id: string } }) => {
         <div className="flex flex-col gap-1.5">
           <span className="text-sm font-medium text-slate-600">Rent For</span>
           <div className="flex flex-row flex-wrap gap-3">
-            {[1, 2, 4, 6, 0].map((hours) => {
+            {[1, 2, 4, 6].map((days) => {
               return (
                 <Button
-                  key={hours}
+                  key={days}
                   variant="outline"
-                  className={cn("px-6", hour === hours && "border-indigo-600")}
-                  onClick={() => setHour(hours)}
+                  className={cn("px-6", day === days && "border-indigo-600")}
+                  onClick={() => setDay(days)}
                 >
-                  {hours === 0 ? "+" : hours + "hr"}
+                  {days > 1 ? days + "Days" : day + " Day"}
                 </Button>
               );
             })}
@@ -113,10 +115,14 @@ const Page = ({ params: { id } }: { params: { id: string } }) => {
 
         <div className="flex flex-row items-center justify-between gap-4">
           <span className="text-3xl font-bold tracking-wide">
-            ${car!["rent-price-per-day"]}/
-            <span className="text-base font-normal text-slate-500">day</span>
+            ${day * car!["rent-price-per-day"]}/
+            <span className="text-base font-normal text-slate-500">
+              {day > 1 ? day + " days" : "day"}
+            </span>
           </span>
-          <Button>Rent Now</Button>
+          <Button onClick={() => router.push(`/rent?id=${id}`)}>
+            Rent Now
+          </Button>
         </div>
       </div>
 

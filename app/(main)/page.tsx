@@ -1,5 +1,5 @@
 import HeroSection from "./components/Hero";
-import PopularCars from "./components/PopularCars";
+import PopularCars from "../../components/PopularCars";
 import Recommended from "./components/RecommendedCars";
 
 export default function Home() {

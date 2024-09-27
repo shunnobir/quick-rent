@@ -1,14 +1,13 @@
 "use client";
 
-import { CarType } from "@/types";
-import React from "react";
 import Button from "@/components/button";
+import Tooltip from "@/components/tooltip";
+import useFavorite from "@/hooks/useFavorite";
+import { cn } from "@/lib/utils";
+import { CarType } from "@/types";
 import { Fuel, Heart, UsersRound, Zap } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import Tooltip from "@/components/tooltip";
-import { cn } from "@/lib/utils";
-import useFavorite from "@/hooks/useFavorite";
 
 const CarCard = (props: CarType) => {
   const router = useRouter();
@@ -74,7 +73,15 @@ const CarCard = (props: CarType) => {
           ${props["rent-price-per-day"]}/
           <span className="text-base font-normal text-slate-500">day</span>
         </span>
-        <Button>Rent Now</Button>
+        <Button
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            router.push(`/rent/?id=${props.id}`);
+          }}
+        >
+          Rent Now
+        </Button>
       </div>
     </div>
   );

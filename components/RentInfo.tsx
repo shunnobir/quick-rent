@@ -1,10 +1,10 @@
 "use client";
 
-import Button from "@/components/button";
-import Input from "@/components/input";
 import Select from "@/components/select";
 import { Calendar, Clock, MapPin } from "lucide-react";
-import React, { useState } from "react";
+import { useState } from "react";
+import DateInput from "./DatePicker";
+import TimeInput from "./TimePicker";
 
 const RentInfo = () => {
   const [pickup, setPickup] = useState({
@@ -21,8 +21,9 @@ const RentInfo = () => {
 
   return (
     <div className="flex flex-col flex-wrap gap-4">
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:items-start">
-        <div className="rounded-xl border border-solid border-slate-200 bg-background px-6 py-6 shadow-sm">
+      <div className="flex flex-col gap-2 rounded-lg bg-background p-5 shadow-sm">
+        <h4 className="text-lg font-bold text-slate-700">Pick-up</h4>
+        <div className="grid grid-cols-1 gap-4 sm:items-start lg:grid-cols-2">
           <Select
             label={
               <div className="flex flex-row items-center gap-1">
@@ -53,43 +54,28 @@ const RentInfo = () => {
               "Bond Street, London, UK",
             ]}
           />
-        </div>
-        <div className="rounded-xl border border-solid border-slate-200 bg-background px-6 py-6 shadow-sm">
-          <Input
-            className="border-0 bg-slate-100"
+          <DateInput
             label={
               <div className="flex flex-row items-center gap-1">
                 <Calendar size={16} strokeWidth={1.5} />
                 <span className="text-sm">Pick-up Date</span>
               </div>
             }
-            type="date"
-            value={pickup.date}
-            onChange={(e) =>
-              setPickup((prev) => ({ ...prev, date: e.target.value }))
-            }
           />
-        </div>
-        <div className="rounded-xl border border-solid border-slate-200 bg-background px-6 py-6 shadow-sm">
-          <Input
-            className="border-0 bg-slate-100"
+          <TimeInput
             label={
               <div className="flex flex-row items-center gap-1">
                 <Clock size={16} strokeWidth={1.5} />
                 <span className="text-sm">Pick-up Time</span>
               </div>
             }
-            type="time"
-            value={pickup.time}
-            onChange={(e) =>
-              setPickup((prev) => ({ ...prev, time: e.target.value }))
-            }
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:items-start">
-        <div className="rounded-xl border border-solid border-slate-200 bg-background px-6 py-6 shadow-sm">
+      <div className="flex flex-col gap-2 rounded-lg bg-background p-5 shadow-sm">
+        <h4 className="text-lg font-bold text-slate-700">Drop-off</h4>
+        <div className="grid grid-cols-1 gap-4 sm:items-start lg:grid-cols-2">
           <Select
             label={
               <div className="flex flex-row items-center gap-1">
@@ -120,41 +106,24 @@ const RentInfo = () => {
               "Bond Street, London, UK",
             ]}
           />
-        </div>
-        <div className="rounded-xl border border-solid border-slate-200 bg-background px-6 py-6 shadow-sm">
-          <Input
-            className="border-0 bg-slate-100"
+          <DateInput
             label={
               <div className="flex flex-row items-center gap-1">
                 <Calendar size={16} strokeWidth={1.5} />
                 <span className="text-sm">Drop-off Date</span>
               </div>
             }
-            type="date"
-            value={dropOff.date}
-            onChange={(e) =>
-              setDropOff((prev) => ({ ...prev, date: e.target.value }))
-            }
           />
-        </div>
-        <div className="rounded-xl border border-solid border-slate-200 bg-background px-6 py-6 shadow-sm">
-          <Input
-            className="border-0 bg-slate-100"
+          <TimeInput
             label={
               <div className="flex flex-row items-center gap-1">
                 <Clock size={16} strokeWidth={1.5} />
                 <span className="text-sm">Drop-off Time</span>
               </div>
             }
-            type="time"
-            value={dropOff.time}
-            onChange={(e) =>
-              setDropOff((prev) => ({ ...prev, time: e.target.value }))
-            }
           />
         </div>
       </div>
-      <Button className="ml-auto min-w-40">Search cars</Button>
     </div>
   );
 };

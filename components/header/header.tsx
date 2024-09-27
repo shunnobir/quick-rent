@@ -4,6 +4,7 @@ import React from "react";
 import Button from "@/components/button";
 import { ArrowUpRight, Bell, Heart, Search } from "lucide-react";
 import Input from "@/components/input";
+import CarSearchInput from "../CarSearchInput";
 
 const Header = () => {
   return (
@@ -19,14 +20,7 @@ const Header = () => {
               priority
             />
           </Link>
-          <Input
-            type="search"
-            name="search"
-            id="search"
-            containerClassName="hidden w-full sm:flex"
-            placeholder="Search cars"
-            LeftIcon={(props) => <Search {...props} />}
-          />
+          <CarSearchInput />
         </div>
         <div className="flex flex-row items-center justify-end gap-4 sm:gap-5">
           <Button variant="icon" href="#">
