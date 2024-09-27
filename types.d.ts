@@ -13,14 +13,7 @@ export interface CarType {
     id: string;
     url: string;
   }[];
-  reviews: {
-    id: string;
-    "reviewer-name": string;
-    "reviewer-image": string;
-    review: string;
-    stars: number;
-    date: string;
-  }[];
+  reviews: ReviewType[];
 }
 
 export type CategoryType =
@@ -36,3 +29,12 @@ export type CategoryType =
       type: "options" | "slider";
       categories: number[];
     };
+
+export interface ReviewType {
+  id: string;
+  "reviewer-name": string;
+  "reviewer-image": string;
+  review: string;
+  stars: number;
+  date: string;
+}

@@ -1,15 +1,18 @@
 "use client";
 
 import { CarType } from "@/types";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "@/components/button";
 import { Fuel, Heart, UsersRound, Zap } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Tooltip from "@/components/tooltip";
+import { cn } from "@/lib/utils";
+import useFavorite from "@/hooks/useFavorite";
 
 const CarCard = (props: CarType) => {
   const router = useRouter();
+  const { favorite, handleFavorite } = useFavorite(props.id);
 
   return (
     <div
@@ -21,8 +24,12 @@ const CarCard = (props: CarType) => {
           <span className="text-lg font-semibold">{props.name}</span>
           <span className="text-sm text-slate-500">{props["car-type"]}</span>
         </div>
-        <Button variant="icon">
-          <Heart size={20} />
+        <Button variant="icon" onClick={handleFavorite}>
+          <Heart
+            size={20}
+            strokeWidth={favorite ? 0 : 2}
+            className={cn(favorite && "fill-indigo-600")}
+          />
         </Button>
       </div>
       <div className="mt-auto flex h-[150px] w-full items-end justify-center">
