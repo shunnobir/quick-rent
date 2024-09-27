@@ -12,7 +12,7 @@ const CarSearchInput = () => {
   useEffect(() => {
     const interval = setInterval(
       () => router.push(`/cars?search=${search}`),
-      1000,
+      350,
     );
 
     return () => clearInterval(interval);
