@@ -139,7 +139,7 @@
     "reviews": [
       {
         "id": "6r7u9p2m",
-        "reviewer-name": "James Brown",
+        "reviewer-name": "Chris Brown",
         "reviewer-image": "https://example.com/images/reviewer11.jpg",
         "review": "The most luxurious car I've ever experienced. Truly a ride fit for royalty.",
         "stars": 5,
@@ -223,7 +223,7 @@
       },
       {
         "id": "l7m5o2az",
-        "reviewer-name": "Lily James",
+        "reviewer-name": "Lily Chris",
         "reviewer-image": "https://example.com/images/reviewer19.jpg",
         "review": "Great SUV for the price, but it's not as luxurious as competitors.",
         "stars": 4,
@@ -259,7 +259,7 @@
     "reviews": [
       {
         "id": "3k9f2l8a",
-        "reviewer-name": "Jack Wilson",
+        "reviewer-name": "Chris Wilson",
         "reviewer-image": "https://example.com/images/reviewer21.jpg",
         "review": "The CR-V is reliable and spacious, but lacks the power of competitors.",
         "stars": 4,
