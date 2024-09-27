@@ -41,8 +41,17 @@ const Page = () => {
       });
     }
 
+    if (filters.search.length > 0) {
+      filteredCars = filteredCars.filter(
+        (car) =>
+          car.name.toLowerCase().search(filters.search.toLowerCase()) !== -1 ||
+          car["car-type"].toLowerCase().search(filters.search.toLowerCase()) !==
+            -1,
+      );
+    }
+
     return filteredCars;
-  }, [data, filters]);
+  }, [data, filters.capacity, filters.price, filters.search, filters.type]);
 
   return (
     <div className="mx-auto grid max-w-[1220px] grid-cols-1 lg:grid-cols-[280px_1fr]">
