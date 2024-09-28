@@ -3,20 +3,25 @@
 import React, { useEffect, useState } from "react";
 import Input from "@/components/input";
 import { Search } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useFilters } from "@/hooks/useFilters";
 
 const CarSearchInput = () => {
-  const router = useRouter();
-  const [search, setSearch] = useState("");
+  const { filters, setFilters } = useFilters();
+  const [search, setSearch] = useState(filters.search);
 
   useEffect(() => {
-    const interval = setInterval(
-      () => router.push(`/cars?search=${search}`),
-      350,
-    );
+    const timeout = setTimeout(() => {
+      if (filters.search !== search)
+        setFilters((prev) => ({ ...prev, search }));
+    }, 350);
 
-    return () => clearInterval(interval);
-  }, [search]);
+    return () => clearTimeout(timeout);
+  }, [filters.search, search, setFilters]);
+
+  useEffect(() => {
+    if (filters.search !== search) setSearch(filters.search);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filters.search]);
 
   return (
     <Input

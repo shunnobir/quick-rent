@@ -18,51 +18,15 @@ const Sidebar = () => {
   );
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const [filters, setFilters] = useFilters();
-
-  const handleTypeFilter = (value: string) => {
-    setFilters((prev) => {
-      const n = [...prev.type, value].sort();
-      return { ...prev, type: n };
-    });
-  };
-
-  const handleRemoveTypeFilter = (value: string) => {
-    setFilters((prev) => {
-      const n = prev.type.filter((type) => type !== value);
-      return { ...prev, type: n };
-    });
-  };
-
-  const handleCapacityFilter = (value: string) => {
-    setFilters((prev) => {
-      const n = [...prev.capacity, value.split(" ")[0]].sort();
-      return { ...prev, capacity: n };
-    });
-  };
-
-  const handleRemoveCapacityFilter = (value: string) => {
-    setFilters((prev) => {
-      const n = prev.capacity.filter(
-        (capacity) => capacity !== value.split(" ")[0],
-      );
-      return { ...prev, capacity: n };
-    });
-  };
-
-  const handlePriceFilter = (lower: number, upper: number) => {
-    setFilters((prev) => {
-      const n = [...prev.price, `${lower}-${upper}`].sort();
-      return { ...prev, price: n };
-    });
-  };
-
-  const handleRemovePriceFilter = (lower: number, upper: number) => {
-    setFilters((prev) => {
-      const n = prev.price.filter((price) => price !== `${lower}-${upper}`);
-      return { ...prev, price: n };
-    });
-  };
+  const {
+    filters,
+    handleTypeFilter,
+    handleRemoveTypeFilter,
+    handleCapacityFilter,
+    handleRemoveCapacityFilter,
+    handlePriceFilter,
+    handleRemovePriceFilter,
+  } = useFilters();
 
   useEffect(() => {
     const handleOutsideClick = (e: MouseEvent) => {
