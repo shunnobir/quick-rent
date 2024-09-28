@@ -1,5 +1,5 @@
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useCallback, useEffect, useState } from "react";
 
 export type SearchFilterType = {
   type: string[];
@@ -9,48 +9,112 @@ export type SearchFilterType = {
 };
 
 export const useFilters = () => {
-  const [filters, setFilters] = useState<SearchFilterType>({
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const [filters, _setFilters] = useState<SearchFilterType>({
     type: [],
     capacity: [],
     price: [],
     search: "",
   });
 
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const pathname = usePathname();
-
-  useEffect(() => {
+  const handleFilters = (
+    newFilters:
+      | SearchFilterType
+      | ((prevFilters: SearchFilterType) => SearchFilterType),
+  ) => {
+    const _newFilters =
+      typeof newFilters === "function" ? newFilters(filters) : newFilters;
+    _setFilters(_newFilters);
     const params = new URLSearchParams();
-    if (filters.type.length > 0) params.set("type", filters.type.join(";"));
+    if (_newFilters.type.length > 0)
+      params.set("type", _newFilters.type.join(";"));
     else params.delete("type");
 
-    if (filters.capacity.length > 0)
-      params.set("capacity", filters.capacity.join(";"));
+    if (_newFilters.capacity.length > 0)
+      params.set("capacity", _newFilters.capacity.join(";"));
     else params.delete("capacity");
 
-    if (filters.price.length > 0) params.set("price", filters.price.join(";"));
+    if (_newFilters.price.length > 0)
+      params.set("price", _newFilters.price.join(";"));
     else params.delete("price");
 
-    if (filters.search.length > 0) params.set("search", filters.search);
+    if (_newFilters.search.length > 0) params.set("search", _newFilters.search);
     else params.delete("search");
 
-    router.replace(`${pathname}?${params.toString()}`);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filters.type, filters.capacity, filters.price, filters.search]);
+    router.replace(`/cars?${params.toString()}`);
+  };
+
+  const setFilters = handleFilters;
+
+  const handleTypeFilter = (value: string) => {
+    setFilters((prev) => {
+      const n = [...prev.type, value].sort();
+      return { ...prev, type: n };
+    });
+  };
+
+  const handleRemoveTypeFilter = (value: string) => {
+    setFilters((prev) => {
+      const n = prev.type.filter((type) => type !== value);
+      return { ...prev, type: n };
+    });
+  };
+
+  const handleCapacityFilter = (value: string) => {
+    setFilters((prev) => {
+      const n = [...prev.capacity, value.split(" ")[0]].sort();
+      return { ...prev, capacity: n };
+    });
+  };
+
+  const handleRemoveCapacityFilter = (value: string) => {
+    setFilters((prev) => {
+      const n = prev.capacity.filter(
+        (capacity) => capacity !== value.split(" ")[0],
+      );
+      return { ...prev, capacity: n };
+    });
+  };
+
+  const handlePriceFilter = (lower: number, upper: number) => {
+    setFilters((prev) => {
+      const n = [...prev.price, `${lower}-${upper}`].sort();
+      return { ...prev, price: n };
+    });
+  };
+
+  const handleRemovePriceFilter = (lower: number, upper: number) => {
+    setFilters((prev) => {
+      const n = prev.price.filter((price) => price !== `${lower}-${upper}`);
+      return { ...prev, price: n };
+    });
+  };
 
   useEffect(() => {
     const type = searchParams.get("type");
     const capacity = searchParams.get("capacity");
     const price = searchParams.get("price");
     const search = searchParams.get("search");
-    setFilters({
+
+    handleFilters({
       type: type ? type.split(";") : [],
       capacity: capacity ? capacity.split(";") : [],
       price: price ? price.split(";") : [],
       search: search ? search : "",
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
-  return [filters, setFilters] as const;
+  return {
+    filters,
+    setFilters,
+    handleTypeFilter,
+    handleRemoveTypeFilter,
+    handleCapacityFilter,
+    handleRemoveCapacityFilter,
+    handlePriceFilter,
+    handleRemovePriceFilter,
+  };
 };

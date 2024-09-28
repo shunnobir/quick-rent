@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { Suspense } from "react";
 import Button from "@/components/button";
 import { ArrowUpRight, Bell, Heart, Search } from "lucide-react";
 import Input from "@/components/input";
 import CarSearchInput from "../CarSearchInput";
+import Skeleton from "../skeleton";
 
 const Header = () => {
   return (
@@ -20,7 +21,9 @@ const Header = () => {
               priority
             />
           </Link>
-          <CarSearchInput />
+          <Suspense fallback={<Skeleton className="h-10 w-full" />}>
+            <CarSearchInput />
+          </Suspense>
         </div>
         <div className="flex flex-row items-center justify-end gap-4 sm:gap-5">
           <Button variant="icon" href="#">
