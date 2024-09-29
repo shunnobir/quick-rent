@@ -91,9 +91,9 @@ const Sidebar = () => {
               </span>
               <div className="flex flex-col gap-3">
                 {category.type === "options"
-                  ? category.categories.map((categ, index) => (
+                  ? category.categories.map((categ) => (
                       <Checkbox
-                        key={index}
+                        key={categ.toString()}
                         label={categ.toString()}
                         value={
                           category.name.toLowerCase() === "type"
@@ -116,7 +116,7 @@ const Sidebar = () => {
                   : category.categories.map((categ, index, array) =>
                       index + 2 <= category.categories.length ? (
                         <Checkbox
-                          key={index}
+                          key={categ.toString()}
                           label={`$${categ} - $${array[index + 1]}`}
                           value={
                             filters.price.find((price) => {

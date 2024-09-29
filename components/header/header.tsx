@@ -6,6 +6,7 @@ import { ArrowUpRight, Bell, Heart, Search } from "lucide-react";
 import Input from "@/components/input";
 import CarSearchInput from "../CarSearchInput";
 import Skeleton from "../skeleton";
+import Tooltip from "../tooltip";
 
 const Header = () => {
   return (
@@ -26,20 +27,21 @@ const Header = () => {
           </Suspense>
         </div>
         <div className="flex flex-row items-center justify-end gap-4 sm:gap-5">
-          <Button variant="icon" href="#">
-            <Heart size={24} strokeWidth={1.5} />
-          </Button>
-          <Button variant="icon" href="#">
-            <Bell size={24} strokeWidth={1.5} />
-          </Button>
-          <Button variant="link" href="#" className="gap-0.5">
-            Login{" "}
-            <ArrowUpRight
-              // strokeWidth={1.5}
-              size={16}
-              className="text-indigo-400"
-            />
-          </Button>
+          <Tooltip tooltipContent="Page not yet implemented">
+            <Button variant="icon" href="#">
+              <Heart size={24} strokeWidth={1.5} />
+            </Button>
+          </Tooltip>
+          <Tooltip tooltipContent="Page not yet implemented">
+            <Button variant="icon" href="#">
+              <Bell size={24} strokeWidth={1.5} />
+            </Button>
+          </Tooltip>
+          <Tooltip tooltipContent="Page not yet implemented">
+            <Button variant="link" href="#" className="gap-0.5">
+              Login <ArrowUpRight size={16} className="text-indigo-400" />
+            </Button>
+          </Tooltip>
         </div>
         <Input
           type="search"

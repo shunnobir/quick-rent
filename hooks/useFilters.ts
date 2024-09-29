@@ -1,4 +1,4 @@
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 
 export type SearchFilterType = {
@@ -9,6 +9,7 @@ export type SearchFilterType = {
 };
 
 export const useFilters = () => {
+  const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -43,7 +44,10 @@ export const useFilters = () => {
     if (_newFilters.search.length > 0) params.set("search", _newFilters.search);
     else params.delete("search");
 
-    router.replace(`/cars?${params.toString()}`);
+    const parameters = params.toString();
+    const previousParameters = searchParams.toString();
+    if (parameters !== previousParameters && pathname.startsWith("/cars"))
+      router.replace(`/cars?${params.toString()}`);
   };
 
   const setFilters = handleFilters;

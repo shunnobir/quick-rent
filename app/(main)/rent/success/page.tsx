@@ -2,7 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
-const NotFound = () => {
+const SuccessPage = () => {
   return (
     <main className="mx-auto flex max-w-[1220px] flex-1 flex-col items-center justify-center gap-5 px-5 py-8 pb-[100px]">
       <h1 className="mx-auto text-center text-3xl font-black text-indigo-600 sm:text-4xl">
@@ -27,4 +27,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default SuccessPage;
