@@ -4,8 +4,9 @@ import React, { useEffect, useState } from "react";
 import Input from "@/components/input";
 import { Search } from "lucide-react";
 import { useFilters } from "@/hooks/useFilters";
+import { cn } from "@/lib/utils";
 
-const CarSearchInput = () => {
+const CarSearchInput = ({ className }: { className?: string }) => {
   const { filters, setFilters } = useFilters();
   const [search, setSearch] = useState(filters.search);
 
@@ -28,7 +29,7 @@ const CarSearchInput = () => {
       type="search"
       name="search"
       id="search"
-      containerClassName="hidden w-full sm:flex"
+      containerClassName={cn(className)}
       placeholder="Search cars"
       LeftIcon={(props) => <Search {...props} />}
       value={search}

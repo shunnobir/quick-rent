@@ -84,7 +84,10 @@ const Sidebar = () => {
           categories.map((category) => (
             <div
               key={category.id}
-              className="flex flex-col gap-4 rounded-lg bg-background px-6 py-8"
+              className={cn(
+                "flex flex-col gap-4 rounded-lg bg-background px-6 py-8",
+                open && category.type !== "options" && "col-span-2",
+              )}
             >
               <span className="text-xs uppercase tracking-widest text-slate-400">
                 {category.name}
