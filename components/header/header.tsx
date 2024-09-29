@@ -1,9 +1,8 @@
+import Button from "@/components/button";
+import { ArrowUpRight, Bell, Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { Suspense } from "react";
-import Button from "@/components/button";
-import { ArrowUpRight, Bell, Heart, Search } from "lucide-react";
-import Input from "@/components/input";
+import { Suspense } from "react";
 import CarSearchInput from "../CarSearchInput";
 import Skeleton from "../skeleton";
 import Tooltip from "../tooltip";
