@@ -46,7 +46,10 @@ export const useFilters = () => {
 
     const parameters = params.toString();
     const previousParameters = searchParams.toString();
-    if (parameters !== previousParameters && pathname.startsWith("/cars"))
+    if (
+      parameters !== previousParameters &&
+      (pathname.startsWith("/cars") || _newFilters.search.length !== 0)
+    )
       router.replace(`/cars?${params.toString()}`);
   };
 

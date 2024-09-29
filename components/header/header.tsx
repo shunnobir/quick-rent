@@ -1,9 +1,8 @@
+import Button from "@/components/button";
+import { ArrowUpRight, Bell, Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { Suspense } from "react";
-import Button from "@/components/button";
-import { ArrowUpRight, Bell, Heart, Search } from "lucide-react";
-import Input from "@/components/input";
+import { Suspense } from "react";
 import CarSearchInput from "../CarSearchInput";
 import Skeleton from "../skeleton";
 import Tooltip from "../tooltip";
@@ -23,7 +22,7 @@ const Header = () => {
             />
           </Link>
           <Suspense fallback={<Skeleton className="h-10 w-full" />}>
-            <CarSearchInput />
+            <CarSearchInput className="hidden w-full sm:flex" />
           </Suspense>
         </div>
         <div className="flex flex-row items-center justify-end gap-4 sm:gap-5">
@@ -43,14 +42,9 @@ const Header = () => {
             </Button>
           </Tooltip>
         </div>
-        <Input
-          type="search"
-          name="search"
-          id="search"
-          containerClassName="col-span-2 sm:hidden"
-          placeholder="Search cars"
-          LeftIcon={(props) => <Search {...props} />}
-        />
+        <Suspense fallback={<Skeleton className="h-10 w-full" />}>
+          <CarSearchInput className="col-span-2 sm:hidden" />
+        </Suspense>
       </div>
     </header>
   );
